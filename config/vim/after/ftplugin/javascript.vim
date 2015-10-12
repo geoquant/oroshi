@@ -26,6 +26,58 @@ function! JavascriptFoldText()
   let output = substitute(output, '[$', '[...' . lines . ']', '')
   return output
 endfunction
+
+function! JavascriptSort()
+  " We need to be able to sort multi-nested objects and arrays. The naive :sort
+  " implementation won't work. We'll then use a specific macro that will do the
+  " following.
+  " - Select all the content
+  " - Yank it and paste it in a new buffer
+  " - Go to the first line and search for {\n
+  " - Select all that is inside the {} with va}
+  " - Get up one line
+  " - Replace all new lines with a specific marker in this selection
+  " - Go down one line
+  " - Restart until we found all {
+  " - Go back up, and start again with []
+  " - Select everything and sort it
+  " - Replace the original selection with the new one
+  "
+  " Another way to do it, instead of using a new buffer would be to add specific
+  " markers to the end of the selection to be able to follow the last line even
+  " when changin
+  let current_position = getpos('.')
+  let marker_string = '__MARKER_STRING__'
+
+  " Put selection content in z register
+  normal! gv"zy
+
+  let content = @z
+  " Join lines using custom string
+  let content = substitute(content, '{\n', '{' . marker_string, 'g')
+  let content = substitute(content, '\n}', marker_string . '}', 'g')
+  let content = substitute(content, '[\n', ']' . marker_string, 'g')
+  let content = substitute(content, '\n]', marker_string . ']', 'g')
+  echom "==="
+  echom content
+
+  let split_content = sort(split(content, '\n'))
+  " echom len(split_content)
+  echom "==="
+
+
+
+  " Sort the resulting content
+
+
+  " Reselect and paste content of z register
+  normal! gvd"zP
+  call setpos('.', current_position)
+endfunction
+
+vnoremap S :<C-U>call JavascriptSort()<CR>
+" <C-R>=JavascriptSort()<CR>
+
 " }}}
 " Rainbow parentheses {{{
 if exists(':RainbowParenthesesToggle')
