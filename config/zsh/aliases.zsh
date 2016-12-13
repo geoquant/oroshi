@@ -271,7 +271,7 @@ alias yrtw='git-root-run yarn run test:watch'
 alias yrt='git-root-run yarn run test'
 # }}}
 # Nvm {{{
-alias nvu='nvm urg ~/local/bie'
+alias nvu='nvm use'
 alias nvud='nvm use default'
 alias nvl='nvm list'
 alias nvd='nvm version default'
@@ -286,10 +286,6 @@ alias pi='pip install --user'
 # }}}
 # Appraisal {{{
 alias ai='appraisal install'
-# }}}
-# Middleman {{{
-alias ms='middleman server'
-alias mb='middleman build'
 # }}}
 # Gem {{{
 alias gi="gem install"

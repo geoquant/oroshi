@@ -19,6 +19,10 @@ bindkey '^E' edit-command-line
 # Ctrl-P fuzzy finding {{{
 if [[ -r ~/.fzf.zsh ]]; then
   source ~/.fzf.zsh
+  export FZF_DEFAULT_OPTS="
+    --color fg:249,bg:233,hl:203,fg+:234,bg+:203,hl+:255
+    --color info:136,prompt:203,pointer:233
+   "
   export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   bindkey '^P' fzf-file-widget
