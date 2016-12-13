@@ -60,3 +60,5 @@ source $zshConfigDir/prompt.zsh
 
 # Some stuff must be loaded after everything else
 source $zshConfigDir/last.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

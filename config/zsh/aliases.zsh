@@ -21,7 +21,8 @@ function git-root-run() {
 }
 
 # Basic commands {{{
-alias ag='ag --context=2 --smart-case --pager="less -R"'
+alias ag='better-rg'
+alias rg='better-rg'
 alias cp='cp -rv'
 alias diff='colordiff'
 alias grep='grep -i --color=auto'

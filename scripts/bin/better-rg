@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+rg \
+  --pretty \
+  --color=always \
+  --context=2 \
+  --smart-case \
+  $* \
+  | less -R
+
