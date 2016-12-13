@@ -172,7 +172,6 @@ alias cdingoo='cd /media/dingoo'
 # Music {{{
 alias mmu='music-metadata-update'
 alias mktl='generate-tracklist'
-alias rg='replaygain'
 alias mm="music-mark"
 # }}}
 # Freebox {{{
@@ -271,7 +270,7 @@ alias yrtw='git-root-run yarn run test:watch'
 alias yrt='git-root-run yarn run test'
 # }}}
 # Nvm {{{
-alias nvu='nvm use'
+alias nvu='nvm urg ~/local/bie'
 alias nvud='nvm use default'
 alias nvl='nvm list'
 alias nvd='nvm version default'

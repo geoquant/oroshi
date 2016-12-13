@@ -303,11 +303,23 @@ vnoremap x "_x
 nnoremap c "_c
 "}}}
 
+" Using ripgrep for grep
+let &grepprg='rg --vimgrep'
+
+" FZF {
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+  map <C-o> <ESC>:Files<CR>
+  map <C-p> <ESC>:Find<CR>
+" }
+
+
+
+
 " CTRL-F {{{
-source ~/.vim/includes/ctrlf.vim
+" source ~/.vim/includes/ctrlf.vim
 " }}}
 " CTRL-P {{{
-source ~/.vim/includes/ctrlp.vim
+" source ~/.vim/includes/ctrlp.vim
 " }}}
 " RAINBOW PARENTHESES {{{
 " Load plugin

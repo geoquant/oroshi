@@ -142,3 +142,7 @@
 	path = scripts/bin/pdf
 	url = git@github.com:pixelastic/pdf.git
 	branch = master
+[submodule "config/vim/bundle/available/fzf.vim"]
+	path = config/vim/bundle/available/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
+	branch = master

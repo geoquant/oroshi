@@ -15,10 +15,15 @@ bindkey -s '^J' '^U vdl^M'
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^E' edit-command-line
-# Ctrl-P for fuzzy finding
-# Use ag for Ctrl-P fuzzy find
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-bindkey '^P' fzf-file-widget
+
+# Ctrl-P fuzzy finding {{{
+if [[ -r ~/.fzf.zsh ]]; then
+  source ~/.fzf.zsh
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  bindkey '^P' fzf-file-widget
+fi
+# }}}
  
 # (re)enabling keybindings
 # Note: press Ctrl-V followed by a key to see its keycode

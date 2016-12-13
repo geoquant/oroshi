@@ -65,10 +65,11 @@ setopt LIST_ROWS_FIRST
 # }}}
 
 # Fuzzy finding completion on ** {{{
-if [[ -r ~/.fzf.zsh ]]; then
-  source ~/.fzf.zsh
-  export FZF_DEFAULT_COMMAND='ag -l -g ""'
-fi
+# if [[ -r ~/.fzf.zsh ]]; then
+#   source ~/.fzf.zsh
+  # export FZF_DEFAULT_COMMAND='ag -l -g ""'
+  # export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+# fi
 # }}}
 
 # Debug method to reload the completion functions {{{
