@@ -28,6 +28,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'tmhedberg/SimpylFold' " Python folding
 Plug 'tpope/vim-markdown'
 Plug 'vim-ruby/vim-ruby'
 " }}}
@@ -42,13 +43,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/committia.vim'
 Plug 'tpope/vim-fugitive'
 " }}}
-
-
-	" Plug 'SirVer/ultisnips'
-	" Plug 'pixelastic/vim-arval'
-	" Plug 'marijnh/tern_for_vim'
-
-	" Plug 'tmhedberg/SimpylFold'
 
 " Add plugins to &runtimepath
 call plug#end()
